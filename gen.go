@@ -1174,7 +1174,7 @@ func (t *{{ .Name}}) UnmarshalCBOR(r io.Reader) (err error) {
 	}
 
 	if extra != {{ len .Fields }} {
-		return fmt.Errorf("cbor input had wrong number of fields")
+		return fmt.Errorf("cbor input had wrong number of fields, got %d, expected {{ len .Fields }}", extra)
 	}
 
 `)
